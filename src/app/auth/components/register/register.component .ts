@@ -1,12 +1,15 @@
-import { CommonModule } from "@angular/common";
+import { Store} from '@ngrx/store'
 import { Component } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { register } from '../../store/actions';
+import { RegisterRequestInterface } from '../../type/registerRequest.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
     selector: 'mcp-register',
     templateUrl: './register.component.html',
     standalone: true,
-    imports: [ ReactiveFormsModule ]
+    imports: [ ReactiveFormsModule, RouterLink ]
 })
 export class RegisterComponent {
     form = this.fb.nonNullable.group({
@@ -15,9 +18,14 @@ export class RegisterComponent {
         password: ['', Validators.required]
     })
 
-    constructor(private fb: FormBuilder) {}
+    constructor(private fb: FormBuilder, private store: Store) {}
 
     onSubmit(){
         console.log('form', this.form.getRawValue())
+
+        const request: RegisterRequestInterface = {
+            user: this.form.getRawValue(),
+        }
+        this.store.dispatch(register({request}))
     }
 }
