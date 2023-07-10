@@ -1,7 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
-import { routerReducer} from '@ngrx/router-store'
+import { provideRouterStore, routerReducer} from '@ngrx/router-store'
 import { provideEffects } from '@ngrx/effects';
 import { provideStore, provideState } from '@ngrx/store';
 import { appRoutes } from './app/app-routes';
@@ -17,6 +17,7 @@ bootstrapApplication(AppComponent, {
         provideHttpClient(),
         provideRouter(appRoutes), 
         provideStore({router: routerReducer}),
+        provideRouterStore(),
         provideState(authFeatureKey, authReducer),
         provideEffects(authEffects),
         provideStoreDevtools({
