@@ -48,6 +48,22 @@ const authFeature = createFeature({
             isSubmitting: false,
             validationErrors: action.errors
         })),
+
+        // get current user part
+        on(authActions.getCurrentUser, (state) => ({
+            ...state, 
+            isLoading: true
+        })),
+        on(authActions.getCurrentUserSuccess, (state, action) => ({
+            ...state, 
+            isLoading: false,
+            currentUser: action.currentUser
+        })),
+        on(authActions.getCurrentUserFailure, (state) => ({
+            ...state, 
+            isLoading: false,
+            currentUser: null
+        })),
         
         // when navigated to another page charge state and clean validation errors 
         on(routerNavigatedAction, (state) => ({...state, validationErrors:null}))
