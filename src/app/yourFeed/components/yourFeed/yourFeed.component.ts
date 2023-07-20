@@ -5,8 +5,8 @@ import {FeedTogglerComponent} from 'src/app/shared/components/feedToggler/feedTo
 import {PopularTagsComponent} from 'src/app/shared/components/popularTags/popularTags.component'
 
 @Component({
-  selector: 'mcp-global-feed',
-  templateUrl: './globalFeed.component.html',
+  selector: 'mcp-your-feed',
+  templateUrl: './yourFeed.component.html',
   standalone: true,
   imports: [
     FeedComponent,
@@ -15,6 +15,6 @@ import {PopularTagsComponent} from 'src/app/shared/components/popularTags/popula
     FeedTogglerComponent,
   ],
 })
-export class GlobalFeedComponent {
-  apiUrl = '/articles'
+export class YourFeedComponent {
+  apiUrl = '/articles/feed'
 }
