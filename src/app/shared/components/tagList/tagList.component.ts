@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core'
-import {UtilsService} from '../../services/utils.service'
 import {CommonModule} from '@angular/common'
-import {RouterLink} from '@angular/router'
 import {PopularTagType} from '../../types/popularTag.type'
 
 @Component({

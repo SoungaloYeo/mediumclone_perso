@@ -5,4 +5,4 @@ import {Component, Input} from '@angular/core'
   template: '<div>Loading...</div>',
   standalone: true,
 })
-export class Loadingomponent {}
+export class LoadingComponent {}

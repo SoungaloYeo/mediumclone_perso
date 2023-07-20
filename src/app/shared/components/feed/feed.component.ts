@@ -6,7 +6,7 @@ import {combineLatest} from 'rxjs'
 import {selectError, selectFeedData, selectIsLoading} from './store/reducers'
 import {ActivatedRoute, Params, Router, RouterLink} from '@angular/router'
 import {ErrorMessageComponent} from '../errorMessage/errorMessage.component'
-import {Loadingomponent} from '../loading/loading.component'
+import {LoadingComponent} from '../loading/loading.component'
 import {environment} from 'src/environments/environment.development'
 import {PaginationComponent} from '../pagination/pagination.component'
 import queryString from 'query-string'
@@ -20,7 +20,7 @@ import {TagListComponent} from '../tagList/tagList.component'
     CommonModule,
     RouterLink,
     ErrorMessageComponent,
-    Loadingomponent,
+    LoadingComponent,
     PaginationComponent,
     TagListComponent,
   ],
