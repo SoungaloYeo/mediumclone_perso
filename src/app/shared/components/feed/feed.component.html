@@ -23,9 +23,14 @@
         <h1>{{ article.title }}</h1>
         <p>{{ article.description }}</p>
         <span>Read more...</span>
-        TAG LIST
+        <mcp-tag-list [tags]="article.tagList"></mcp-tag-list>
       </a>
     </div>
-    PAGINATION
+    <mcp-pagination
+      [total]="data.feed.articlesCount"
+      [limit]="limit"
+      [url]="baseUrl"
+      [currentPage]="currentPage"
+    ></mcp-pagination>
   </div>
 </ng-container>
